@@ -1,7 +1,15 @@
 # frozen_string_literal: true
 
+puts "[avo-acronym-support] Loading gem from #{__FILE__}"
+
 require_relative "support/version"
+
+puts "[avo-acronym-support] Version: #{Avo::Acronym::Support::VERSION}"
+puts "[avo-acronym-support] Rails::Railtie defined? #{defined?(Rails::Railtie)}"
+
 require_relative "support/railtie" if defined?(Rails::Railtie)
+
+puts "[avo-acronym-support] Railtie loaded? #{defined?(Avo::Acronym::Support::Railtie)}"
 
 module Avo
   module Acronym

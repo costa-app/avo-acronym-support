@@ -1,9 +1,12 @@
 # frozen_string_literal: true
 
+puts "[avo-acronym-support] Loading Railtie from #{__FILE__}"
+
 module Avo
   module Acronym
     module Support
       class Railtie < ::Rails::Railtie
+        puts "[avo-acronym-support] Railtie class being defined"
         # Set up Zeitwerk callback to create alias immediately after URL helpers loads
         initializer "avo_acronym_support.setup_loader_hooks", before: :set_autoload_paths do
           puts "[avo-acronym-support] Initializer 'setup_loader_hooks' running (before: set_autoload_paths)"
